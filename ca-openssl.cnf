@@ -83,7 +83,8 @@ stateOrProvinceName_default     = State
 localityName_default            = City
 0.organizationName_default      = Example Org
 organizationalUnitName_default  = Dev
-emailAddress_default            = info@example.com
+commonName_default              = My Root CA
+emailAddress_default            = info-root-ca@example.com
 
 [ v3_ca ]
 # Extensions for a typical CA (`man x509v3_config`).
