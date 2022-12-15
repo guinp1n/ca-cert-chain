@@ -2,6 +2,11 @@ The script generates 2 server certificate chains and puts them into one `broker-
 
 Results are saved to directory `keystores`.
 
+#### How to use: 
+```
+./run.sh
+```
+
 #### Copy the keystore:
 ```
 cp keystores/broker-keystore.jks $HIVEMQ_HOME/conf/
@@ -30,3 +35,14 @@ mqtt pub -t Test -m Hello -i Pubbbie -h broker2.hivemq.local -p 8020 --cafile br
 ```
 
 Test command works only for the broker1 :/ 
+
+#### Dependencies
+For the `./run.sh`:
+1. `bash` (GNU bash, version 5.2.12(1)-release (x86_64-apple-darwin22.1.0))
+1. `keytool` – comes with Java (Open JDK 11)
+1. `openssl` (OpenSSL 3.0.7 1 Nov 2022 (Library: OpenSSL 3.0.7 1 Nov 2022))
+
+For the test:
+1. `mqtt` – comes with HiveMQ broker (4.9.1)
+1. HiveMQ broker (4.9.1) installed locally
+1. `/etc/hosts` updated – see above
