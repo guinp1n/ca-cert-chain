@@ -14,11 +14,22 @@ cp keystores/broker-keystore.jks $HIVEMQ_HOME/conf/
 
 #### Update config.xml:
 ```
-<keystore>
-    <path>conf/broker-keystore.jks</path>
-    <password>changeme5</password>
-    <private-key-password>changeme5</private-key-password>
-</keystore>
+<tls-tcp-listener>
+    <port>8020</port>
+    <bind-address>0.0.0.0</bind-address>
+    <tls>
+        <protocols>
+            <protocol>TLSv1.2</protocol>
+        </protocols>
+        <keystore>
+            <path>conf/broker-keystore.jks</path>
+            <password>changeme5</password>
+            <private-key-password>changeme5</private-key-password>
+        </keystore>
+
+        <client-authentication-mode>NONE</client-authentication-mode>
+    </tls>
+</tls-tcp-listener>
 ```
 
 #### Update /etc/hosts:
